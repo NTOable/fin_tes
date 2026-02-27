@@ -1,5 +1,5 @@
 <footer class="footer">
 
-   &copy; copyright @ <?= date('Y'); ?> by <span>mr. web designer</span> | all rights reserved!
+   &copy; 2026 @ <?= date('Y'); ?> Developed by <span>Torchlight Tutoring</span> | CIIT
 
 </footer>
