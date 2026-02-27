@@ -26,12 +26,6 @@ document.querySelector('.side-bar .close-side-bar').onclick = () =>{
    body.classList.remove('active');
 }
 
-document.querySelectorAll('input[type="number"]').forEach(InputNumber => {
-   InputNumber.oninput = () =>{
-      if(InputNumber.value.length > InputNumber.maxLength) InputNumber.value = InputNumber.value.slice(0, InputNumber.maxLength);
-   }
-});
-
 window.onscroll = () =>{
    profile.classList.remove('active');
    searchForm.classList.remove('active');
@@ -58,9 +52,6 @@ const disableDarkMode = () =>{
    localStorage.setItem('dark-mode', 'disabled');
 }
 
-if(darkMode === 'enabled'){
-   enabelDarkMode();
-}
 
 toggleBtn.onclick = (e) =>{
    let darkMode = localStorage.getItem('dark-mode');
@@ -69,4 +60,8 @@ toggleBtn.onclick = (e) =>{
    }else{
       disableDarkMode();
    }
+}
+
+if(darkMode === 'enabled'){
+   enabelDarkMode();
 }
