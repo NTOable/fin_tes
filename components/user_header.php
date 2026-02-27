@@ -97,12 +97,12 @@ if(isset($message)){
       </div>
 
    <nav class="navbar">
-      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="forum.html"><i class="material-icons">&#xe0bf;</i><span>Forum</span></a>
-      <a href="courses.html"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
-      <a href="teachers.html"><i class="fas fa-chalkboard-user"></i><span>Tutors</span></a>
-      <a href="about.html"><i class="fas fa-question"></i><span>About Us</span></a>
-      <a href="contact.html"><i class="fas fa-headset"></i><span>Contact Us</span></a>
+      <a href="home.php"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="forum.php"><i class="material-icons">&#xe0bf;</i><span>Forum</span></a>
+      <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
+      <a href="teachers.php"><i class="fas fa-chalkboard-user"></i><span>Tutors</span></a>
+      <a href="about.php"><i class="fas fa-question"></i><span>About Us</span></a>
+      <a href="contact.php"><i class="fas fa-headset"></i><span>Contact Us</span></a>
    </nav>
 
 </div>
