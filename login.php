@@ -12,19 +12,63 @@ if(isset($_POST['submit'])){
 
    $email = $_POST['email'];
    $email = filter_var($email, FILTER_SANITIZE_STRING);
+
    $pass = sha1($_POST['pass']);
    $pass = filter_var($pass, FILTER_SANITIZE_STRING);
 
+
+   // =====================
+   // CHECK ADMINS
+   // =====================
+   $select_admin = $conn->prepare("SELECT * FROM `admins` WHERE email = ? AND password = ? LIMIT 1");
+   $select_admin->execute([$email, $pass]);
+   $admin = $select_admin->fetch(PDO::FETCH_ASSOC);
+
+   if($select_admin->rowCount() > 0){
+
+      setcookie('admin_id', $admin['id'], time() + 60*60*24*30, '/');
+      header('location:admin_home.php');
+      exit();
+
+   }
+
+
+   // =====================
+   // CHECK TUTORS
+   // =====================
+   $select_tutor = $conn->prepare("SELECT * FROM `tutors` WHERE email = ? AND password = ? LIMIT 1");
+   $select_tutor->execute([$email, $pass]);
+   $tutor = $select_tutor->fetch(PDO::FETCH_ASSOC);
+
+   if($select_tutor->rowCount() > 0){
+
+      setcookie('tutor_id', $tutor['id'], time() + 60*60*24*30, '/');
+      header('location:tutor_home.php');
+      exit();
+
+   }
+
+
+   // =====================
+   // CHECK USERS (students)
+   // =====================
    $select_user = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ? LIMIT 1");
    $select_user->execute([$email, $pass]);
-   $row = $select_user->fetch(PDO::FETCH_ASSOC);
-   
+   $user = $select_user->fetch(PDO::FETCH_ASSOC);
+
    if($select_user->rowCount() > 0){
-     setcookie('user_id', $row['id'], time() + 60*60*24*30, '/');
-     header('location:home.php');
-   }else{
-      $message[] = 'incorrect email or password!';
+
+      setcookie('user_id', $user['id'], time() + 60*60*24*30, '/');
+      header('location:home.php');
+      exit();
+
    }
+
+
+   // =====================
+   // NOT FOUND
+   // =====================
+   $message[] = 'incorrect email or password!';
 
 }
 

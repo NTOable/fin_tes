@@ -2,10 +2,10 @@
 
 include '../components/connect.php';
 
-if(isset($_COOKIE['admin_id'])){
-   $admin_id = $_COOKIE['admin_id'];
+if(isset($_COOKIE['tutor_id'])){
+   $tutor_id = $_COOKIE['tutor_id'];
 }else{
-   $admin_id = '';
+   $tutor_id = '';
    header('location:login.php');
 }
 
@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
    if($thumb_size > 2000000){
       $message[] = 'image size is too large!';
    }else{
-      $add_playlist = $conn->prepare("INSERT INTO `content`(id, admin_id, playlist_id, title, description, video, thumb, status) VALUES(?,?,?,?,?,?,?,?)");
+      $add_playlist = $conn->prepare("INSERT INTO `content`(id, tutor_id, playlist_id, title, description, video, thumb, status) VALUES(?,?,?,?,?,?,?,?)");
       $add_playlist->execute([$id, $tutor_id, $playlist, $title, $description, $rename_video, $rename_thumb, $status]);
       move_uploaded_file($thumb_tmp_name, $thumb_folder);
       move_uploaded_file($video_tmp_name, $video_folder);

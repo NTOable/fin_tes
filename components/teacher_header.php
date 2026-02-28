@@ -15,7 +15,7 @@ if(isset($message)){
 
    <section class="flex">
 
-      <a href="dashboard.php" class="logo">Torchlight Tutoring | Admin</a>
+      <a href="dashboard.php" class="logo">Torchlight Tutoring | Tutor</a>
 
       <form action="search_page.php" method="post" class="search-form">
          <input type="text" name="search" placeholder="search here..." required maxlength="100">
@@ -74,8 +74,8 @@ if(isset($message)){
 
    <div class="profile">
          <?php
-            $select_profile = $conn->prepare("SELECT * FROM `admins` WHERE id = ?");
-            $select_profile->execute([$admin_id]);
+            $select_profile = $conn->prepare("SELECT * FROM `tutors` WHERE id = ?");
+            $select_profile->execute([$tutor_id]);
             if($select_profile->rowCount() > 0){
             $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
          ?>
@@ -101,7 +101,7 @@ if(isset($message)){
       <a href="playlists.php"><i class="fa-solid fa-bars-staggered"></i><span>playlists</span></a>
       <a href="contents.php"><i class="fas fa-graduation-cap"></i><span>contents</span></a>
       <a href="comments.php"><i class="fas fa-comment"></i><span>comments</span></a>
-      <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a>
+      <a href="../components/teacher_logout.php" onclick="return confirm('logout from this website?');"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a>
    </nav>
 
 </div>
