@@ -1457,6 +1457,7 @@ section{
    padding: .5rem 0;
    text-overflow: ellipsis;
    overflow-x: hidden;
+   /* test */
 }
 
 .footer{
