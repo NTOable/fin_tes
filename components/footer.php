@@ -3,4 +3,4 @@
 
    &copy; <?= date('Y'); ?> Developed by <span>Torchlight Tutoring</span> | CIIT
 
-</footer>
+</footer>   
