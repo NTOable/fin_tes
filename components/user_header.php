@@ -45,7 +45,7 @@ if(isset($message)){
          <a href="profile.php" class="btn">View Profile</a>
          <div class="flex-btn">
             <a href="login.php" class="option-btn">Login</a>
-            <a href="register.php" class="option-btn">Register</a>
+            <a href="choose_role.php" class="option-btn">Register</a>
          </div>
          <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">Logout</a>
          <?php
@@ -92,7 +92,7 @@ if(isset($message)){
          <h3>Please login or register</h3>
           <div class="flex-btn" style="padding-top: .5rem;">
             <a href="login.php" class="option-btn">Login</a>
-            <a href="register.php" class="option-btn">Register</a>
+            <a href="choose_role.php" class="option-btn">Register</a>
          </div>
          <?php
             }
