@@ -9,20 +9,23 @@ if(isset($_COOKIE['admin_id'])){
    header('location:login.php');
 }
 
-$select_contents = $conn->prepare("SELECT * FROM `content` WHERE admin_id = ?");
-$select_contents->execute([$admin_id]);
+$select_contents = $conn->prepare("SELECT * FROM `content`");
+$select_contents->execute();
 $total_contents = $select_contents->rowCount();
 
-$select_playlists = $conn->prepare("SELECT * FROM `playlist` WHERE admin_id = ?");
-$select_playlists->execute([$admin_id]);
+
+$select_playlists = $conn->prepare("SELECT * FROM `playlist`");
+$select_playlists->execute();
 $total_playlists = $select_playlists->rowCount();
 
-$select_likes = $conn->prepare("SELECT * FROM `likes` WHERE admin_id = ?");
-$select_likes->execute([$admin_id]);
+
+$select_likes = $conn->prepare("SELECT * FROM `likes`");
+$select_likes->execute();
 $total_likes = $select_likes->rowCount();
 
-$select_comments = $conn->prepare("SELECT * FROM `comments` WHERE admin_id = ?");
-$select_comments->execute([$admin_id]);
+
+$select_comments = $conn->prepare("SELECT * FROM `comments`");
+$select_comments->execute();
 $total_comments = $select_comments->rowCount();
 
 ?>
