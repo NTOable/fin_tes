@@ -17,6 +17,9 @@ if(isset($message)){
 
       <a href="home.php" class="logo">Torchlight Tutoring | Home</a>
 
+      <!-- font awesome cdn link  -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
       <form action="search_course.php" method="post" class="search-form">
          <input type="text" name="search_course" placeholder="search courses..." required maxlength="100">
          <button type="submit" class="fas fa-search" name="search_course_btn"></button>

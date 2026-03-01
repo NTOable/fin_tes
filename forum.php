@@ -57,7 +57,7 @@ $total_comments = $select_comments->rowCount();
             <span>10 comments</span>
          </div>
          <h3 class="title">Fellow Game Dev Enthusiasts?!</h3>
-         <a href="playlist.html" class="inline-btn">View Thread</a>
+         <a href="playlist.php" class="inline-btn">View Thread</a>
       </div>
 
       <!-- add new forum boxes -->
