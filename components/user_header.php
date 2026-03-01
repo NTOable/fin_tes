@@ -111,3 +111,4 @@ if(isset($message)){
 </div>
 
 <!-- side bar section ends -->
+ <div class="main-content">
