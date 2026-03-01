@@ -65,7 +65,7 @@ $total_comments = $select_comments->rowCount();
    </div>
 
    <div class="more-btn">
-      <a href="courses.html" class="inline-option-btn">View More Forums</a>
+      <a href="courses.php" class="inline-option-btn">View More Forums</a>
    </div>
 
 </section>

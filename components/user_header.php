@@ -47,14 +47,14 @@ if(isset($message)){
             <a href="login.php" class="option-btn">Login</a>
             <a href="choose_role.php" class="option-btn">Register</a>
          </div>
-         <a href="components/user_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">Logout</a>
+         <a href="components/user_logout.php" onclick="return confirm('Logout?');" class="delete-btn">Logout</a>
          <?php
             }else{
          ?>
          <h3>Please login or register first</h3>
           <div class="flex-btn">
             <a href="login.php" class="option-btn">Login</a>
-            <a href="register.php" class="option-btn">Register</a>
+            <a href="choose_role.php" class="option-btn">Register</a>
          </div>
          <?php
             }
