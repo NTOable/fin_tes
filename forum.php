@@ -49,7 +49,7 @@ $total_comments = $select_comments->rowCount();
             <div class="info">
                <h3>john deo</h3>
                <span>21-10-2026</span>
-               <p>Hello guys! I am looking for students interested in game development!</p>
+               <p class= "message">Hello guys! I am looking for students interested in game development!</p>
             </div>  
          </div>
          <div class="thumb">

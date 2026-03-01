@@ -54,7 +54,7 @@ if(isset($message)){
          <h3>Please login or register first</h3>
           <div class="flex-btn">
             <a href="login.php" class="option-btn">Login</a>
-            <a href="register.php" class="option-btn">Register</a>
+            <a href="choose_role.php" class="option-btn">Register</a>
          </div>
          <?php
             }
