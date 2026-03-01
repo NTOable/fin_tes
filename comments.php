@@ -26,7 +26,7 @@ if(isset($_POST['delete_comment'])){
    }
 
 }
-
+//test
 if(isset($_POST['update_now'])){
 
    $update_id = $_POST['update_id'];
