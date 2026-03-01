@@ -96,16 +96,6 @@ if(isset($_POST['submit'])){
 
 <!-- contact section ends -->
 
-
-
-
-
-
-
-
-
-
-
 <?php include 'components/footer.php'; ?>  
 
 <!-- custom js file link  -->
