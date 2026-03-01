@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
       $message[] = 'image size is too large!';
    }else{
       $add_playlist = $conn->prepare("INSERT INTO `content`(id, admin_id, playlist_id, title, description, video, thumb, status) VALUES(?,?,?,?,?,?,?,?)");
-      $add_playlist->execute([$id, $tutor_id, $playlist, $title, $description, $rename_video, $rename_thumb, $status]);
+      $add_playlist->execute([$id, $admin_id, $playlist, $title, $description, $rename_video, $rename_thumb, $status]);
       move_uploaded_file($thumb_tmp_name, $thumb_folder);
       move_uploaded_file($video_tmp_name, $video_folder);
       $message[] = 'new course uploaded!';
@@ -90,8 +90,8 @@ if(isset($_POST['submit'])){
       <select name="playlist" class="box" required>
          <option value="" disabled selected>--select playlist</option>
          <?php
-         $select_playlists = $conn->prepare("SELECT * FROM `playlist` WHERE tutor_id = ?");
-         $select_playlists->execute([$tutor_id]);
+         $select_playlists = $conn->prepare("SELECT * FROM `playlist` WHERE admin_id = ?");
+         $select_playlists->execute([$admin_id]);
          if($select_playlists->rowCount() > 0){
             while($fetch_playlist = $select_playlists->fetch(PDO::FETCH_ASSOC)){
          ?>

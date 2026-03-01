@@ -2,10 +2,10 @@
 
 include '../components/connect.php';
 
-if(isset($_COOKIE['tutor_id'])){
-   $tutor_id = $_COOKIE['tutor_id'];
+if(isset($_COOKIE['admin_id'])){
+   $admin_id = $_COOKIE['admin_id'];
 }else{
-   $tutor_id = '';
+   $admin_id = '';
    header('location:login.php');
 }
 
