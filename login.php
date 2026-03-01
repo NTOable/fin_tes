@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
    if($select_admin->rowCount() > 0){
 
       setcookie('admin_id', $admin['id'], time() + 60*60*24*30, '/');
-      header('location:/admin/dashboard.php');
+      header('location:admin/dashboard.php');
       exit();
 
    }
