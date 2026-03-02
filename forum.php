@@ -39,22 +39,41 @@ $total_posts = $select_posts->rowCount();
 
    <div class="box-container">
 
+ <?php
+         $select_forums = $conn->prepare("SELECT * FROM `forum_posts` ORDER BY date DESC");
+         $select_forums->execute();
+         if($select_forums->rowCount() > 0){
+            while($fetch_forum = $select_forums->fetch(PDO::FETCH_ASSOC)){
+               $post_id = $fetch_forum['id'];
+
+               $select_student = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
+               $select_student->execute([$fetch_forum['user_id']]);
+               $fetch_student = $select_student->fetch(PDO::FETCH_ASSOC);
+      ?>
+
       <div class="box">
          <div class="tutor">
-            <img src="images/pic-2.jpg" alt="">
             <div class="info">
-               <h3>john deo</h3>
-               <span>21-10-2026</span>
-               <p class= "message">Hello guys! I am looking for students interested in game development!</p>
+                 <h3 class ="title"><?= $fetch_student['name']; ?></h3>
+               <span><?= $fetch_forum['date']; ?></span>
+               <p class= "message"><?= $fetch_forum['title']; ?></p>
             </div>  
          </div>
          <div class="thumb">
             <img src="images/thumb-1.png" alt="">
-            <span>10 comments</span>
+            <!-- span should be replaced with -->
+            <!-- <span> global variable for fetch all 
+               comments linked to a single post </span>  -->
+            <span>10 comments</span> 
          </div>
-         <h3 class="title">Fellow Game Dev Enthusiasts?!</h3>
-         <a href="playlist.php" class="inline-btn">View Thread</a>
+         <a href="#" class="inline-btn">View Thread</a>
       </div>
+            <?php
+         }
+      }else{
+         echo '<p class="empty">no courses added yet!</p>';
+      }
+      ?>
 
       <!-- add new forum boxes -->
 
