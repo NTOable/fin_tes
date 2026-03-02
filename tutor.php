@@ -33,7 +33,7 @@ if(isset($_COOKIE['user_id'])){
 
 <section class="teachers">
 
-   <h1 class="heading">Our Tutors</h1>
+   <h1 class="heading">Tutor</h1>
 
    <form action="search_tutor.php" method="post" class="search-tutor">
       <input type="text" name="search_tutor" maxlength="100" placeholder="search tutor..." required>
