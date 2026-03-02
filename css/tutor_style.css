@@ -44,10 +44,16 @@ html {
   overflow-x: hidden;
 }
 
+.main-content{
+   flex: 1;
+}
+
 body {
   background-color: var(--light-bg);
   padding-left: 30rem;
-  /* padding-bottom: 7rem; */
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
 }
 
 body.dark {
@@ -997,17 +1003,13 @@ section {
 }
 
 .footer {
-  position: sticky;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: var(--white);
-  border-top: var(--border);
-  padding: 2.5rem 2rem;
-  text-align: center;
-  color: var(--black);
-  font-size: 2rem;
-  margin-top: 2rem;
+   background-color: var(--white);
+   border-top: var(--border);
+   padding: 2.5rem 2rem;
+   text-align: center;
+   color: var(--black);
+   font-size: 2rem;
+   margin-top: 1.5rem;
   z-index: 1000;
 }
 
