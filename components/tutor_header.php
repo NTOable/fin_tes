@@ -9,13 +9,24 @@ if(isset($message)){
       ';
    }
 }
+
+// CHECK USER ONCE (IMPORTANT)
+$select_profile = $conn->prepare("SELECT * FROM `tutors` WHERE id = ?");
+$select_profile->execute([$tutor_id]);
+$logged_in = $select_profile->rowCount() > 0;
+
+if($logged_in){
+   $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
+}
 ?>
 
 <header class="header">
 
-   <section class="flex">
-
-      <a href="dashboard.php" class="logo">Torchlight Tutoring | Tutor</a>
+<section class="flex">
+   <?php if($logged_in){ ?>
+   <a href="dashboard.php" class="logo">Torchlight Tutoring</a> <?php } else { ?>
+   <a class="logo">Torchlight Tutoring</a> 
+   <?php } ?>
 
       <form action="search_page.php" method="post" class="search-form">
          <input type="text" name="search" placeholder="search here..." required maxlength="100">
@@ -29,37 +40,25 @@ if(isset($message)){
          <div id="toggle-btn" class="fas fa-sun"></div>
       </div>
 
-      <div class="profile">
-         <?php
-            $select_profile = $conn->prepare("SELECT * FROM `tutors` WHERE id = ?");
-            $select_profile->execute([$tutor_id]);
-            if($select_profile->rowCount() > 0){
-            $fetch_profile = $select_profile->fetch(PDO::FETCH_ASSOC);
-         ?>
+<div class="profile">
+      <?php if($logged_in){ ?>
          <img src="../uploaded_files/<?= $fetch_profile['image']; ?>" alt="">
          <h3><?= $fetch_profile['name']; ?></h3>
-         <span><?= $fetch_profile['profession']; ?></span>
+        <span><?= $fetch_profile['profession']; ?></span>
          <a href="profile.php" class="btn">View Profile</a>
+         <a href="components/tutor_logout.php"
+            onclick="return confirm('Logout?');"
+            class="delete-btn">Logout</a>
+      <?php } else { ?>
+         <h3>Please login or register first</h3>
          <div class="flex-btn">
             <a href="login.php" class="option-btn">Login</a>
-            <a href="register.php" class="option-btn">Register</a>
+            <a href="choose_role.php" class="option-btn">Register</a>
          </div>
-         <a href="../components/admin_logout.php" onclick="return confirm('logout from this website?');" class="delete-btn">logout</a>
-         <?php
-            }else{
-         ?>
-         <h3>Please login or register first</h3>
-          <div class="flex-btn">
-            <a href="login.php" class="option-btn">Login</a>
-            <a href="register.php" class="option-btn">Register</a>
-         </div>
-         <?php
-            }
-         ?>
-      </div>
+      <?php } ?>
+   </div>
 
    </section>
-
 </header>
 
 <!-- header section ends -->
