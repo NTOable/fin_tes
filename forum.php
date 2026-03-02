@@ -38,7 +38,7 @@ $total_comments = $select_comments->rowCount();
 <?php include 'components/user_header.php'; ?>
 
 <section class="courses">
-
+   
    <h1 class="heading">Forum</h1>
 
    <div class="box-container">

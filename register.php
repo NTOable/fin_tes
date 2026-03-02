@@ -95,7 +95,7 @@ if(isset($_POST['submit'])){
       </div>
       <p>select pic <span>*</span></p>
       <input type="file" name="image" accept="image/*" required class="box">
-      <p class="link">already have an account? <a href='../login.php'>login now</a></p>
+      <p class="link">already have an account? <a href='login.php'>login now</a></p>
       <input type="submit" name="submit" value="register now" class="btn">
    </form>
 
