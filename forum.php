@@ -66,12 +66,12 @@ $total_posts = $select_posts->rowCount();
                comments linked to a single post </span>  -->
             <span>10 comments</span> 
          </div>
-         <a href="#" class="inline-btn">View Thread</a>
+         <a href="replies.php" class="inline-btn">View Thread</a>
       </div>
             <?php
          }
       }else{
-         echo '<p class="empty">no courses added yet!</p>';
+         echo '<p class="empty">no forums added yet!</p>';
       }
       ?>
 
