@@ -24,8 +24,10 @@ if($logged_in){
 <header class="header">
 
 <section class="flex">
-
-   <a href="home.php" class="logo">Torchlight Tutoring | Student</a>
+   <?php if($logged_in){ ?>
+   <a href="home.php" class="logo">Torchlight Tutoring</a> <?php } else { ?>
+   <a class="logo">Torchlight Tutoring</a> 
+   <?php } ?>
 
    <form action="search_course.php" method="post" class="search-form">
       <input type="text" name="search_course" placeholder="search courses..." required maxlength="100">
@@ -85,7 +87,7 @@ if($logged_in){
    <nav class="navbar">
       <?php if($logged_in){ ?>
          <a href="home.php"><i class="fas fa-home"></i><span>Home</span></a>
-         <a href="forum.php"><i class="material-icons">&#xe0bf;</i><span>Forum</span></a>
+         <a href="forum.php"><i class="fas fa-comments"></i><span>Forum</span></a>
          <a href="courses.php"><i class="fas fa-graduation-cap"></i><span>Courses</span></a>
          <a href="tutor.php"><i class="fas fa-chalkboard-user"></i><span>Tutors</span></a>
          <a href="about.php"><i class="fas fa-question"></i><span>About Us</span></a>

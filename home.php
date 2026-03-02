@@ -7,6 +7,21 @@ if(isset($_COOKIE['user_id'])){
 }else{
    $user_id = '';
 }
+// for profile images
+$upload_dir = 'uploaded_files/';
+
+if (!is_dir($upload_dir)) {
+   mkdir($upload_dir, 0777, true);
+}
+function getImage($file){
+   $path = 'uploaded_files/'.$file;
+
+   if(empty($file) || !file_exists($path)){
+      return 'images/default.png';
+   }
+
+   return $path;
+}
 
 $select_likes = $conn->prepare("SELECT * FROM `likes` WHERE user_id = ?");
 $select_likes->execute([$user_id]);
@@ -134,13 +149,37 @@ $total_bookmarked = $select_bookmark->rowCount();
       ?>
       <div class="box">
          <div class="tutor">
-            <img src="uploaded_files/<?= $fetch_tutor['image']; ?>" alt="">
+
+            <?php
+            $tutor_image = !empty($fetch_tutor['image']) 
+               ? 'uploaded_files/'.$fetch_tutor['image']
+               : 'images/default.png';
+
+            if(!file_exists($tutor_image)){
+               $tutor_image = 'images/default.png';
+            }
+            ?>
+
+            <img src="<?= getImage($fetch_tutor['image']); ?>">
+
             <div>
                <h3><?= $fetch_tutor['name']; ?></h3>
                <span><?= $fetch_course['date']; ?></span>
             </div>
          </div>
-         <img src="uploaded_files/<?= $fetch_course['thumb']; ?>" class="thumb" alt="">
+
+      <?php
+      $course_thumb = !empty($fetch_course['thumb']) 
+         ? 'uploaded_files/'.$fetch_course['thumb']
+         : 'images/default.png';
+
+      if(!file_exists($course_thumb)){
+         $course_thumb = 'images/default.jpg';
+      }
+      ?>
+
+      <img src="<?= getImage($fetch_course['thumb']); ?>">
+
          <h3 class="title"><?= $fetch_course['title']; ?></h3>
          <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view playlist</a>
       </div>
