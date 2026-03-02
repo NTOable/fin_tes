@@ -12,7 +12,6 @@ $select_posts = $conn->prepare("SELECT * FROM `forum_posts`");
 $select_posts->execute();
 $total_posts = $select_posts->rowCount();
 
-
 ?>
 
 <!DOCTYPE html>
@@ -60,8 +59,13 @@ $total_posts = $select_posts->rowCount();
       <!-- add new forum boxes -->
 
    </div>
+<!-- Condition where if no Forums are found from DB, show no forums found -->
+   <div class="more-btn">
+      <a href="add_forum.php" class="inline-option-btn">Create a Forum Post</a>
+   </div>
 <!-- NEED TO MODIFY CSS -->
 <!-- TO ONLY SHOW THREE THREADS AT A TIME -->
+
    <div class="more-btn">
       <a href="forum.php" class="inline-option-btn">View More Forums</a>
    </div>
