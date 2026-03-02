@@ -119,7 +119,7 @@ $total_bookmarked = $select_bookmark->rowCount();
       <div class="box tutor">
          <h3 class="title">Become a Tutor Today</h3>
          <p>Interested in lighting another one's mind?</p>
-         <a href="admin/register.php" class="inline-btn">Get Started</a>
+         <a href="tutor/register.php" class="inline-btn">Get Started</a>
       </div>
 
    </div>

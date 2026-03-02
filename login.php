@@ -16,7 +16,7 @@ if(isset($_COOKIE['user_id'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>home</title>
+   <title>Torchlight Tutoring</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -78,7 +78,7 @@ if(isset($_POST['submit'])){
    if($select_tutor->rowCount() > 0){
 
       setcookie('tutor_id', $tutor['id'], time() + 60*60*24*30, '/');
-      header('location:tutor_home.php');
+      header('location:tutor/dashboard.php');
       exit();
 
    }

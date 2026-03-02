@@ -39,7 +39,7 @@ $total_comments = $select_comments->rowCount();
 
 <section class="courses">
 
-   <h1 class="heading">Forum Section</h1>
+   <h1 class="heading">Forum</h1>
 
    <div class="box-container">
 
@@ -63,9 +63,10 @@ $total_comments = $select_comments->rowCount();
       <!-- add new forum boxes -->
 
    </div>
-
+<!-- NEED TO MODIFY CSS -->
+<!-- TO ONLY SHOW THREE THREADS AT A TIME -->
    <div class="more-btn">
-      <a href="courses.php" class="inline-option-btn">View More Forums</a>
+      <a href="forum.php" class="inline-option-btn">View More Forums</a>
    </div>
 
 </section>
