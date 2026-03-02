@@ -85,9 +85,6 @@ $total_posts = $select_posts->rowCount();
 <!-- NEED TO MODIFY CSS -->
 <!-- TO ONLY SHOW THREE THREADS AT A TIME -->
 
-   <div class="more-btn">
-      <a href="forum.php" class="inline-option-btn">View More Forums</a>
-   </div>
 
 </section>
 
