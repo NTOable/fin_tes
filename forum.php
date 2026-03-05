@@ -8,10 +8,6 @@ if(isset($_COOKIE['user_id'])){
    $user_id = '';
 }
 
-$select_posts = $conn->prepare("SELECT * FROM `forum_posts`");
-$select_posts->execute();
-$total_posts = $select_posts->rowCount();
-
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +40,7 @@ $total_posts = $select_posts->rowCount();
          $select_forums->execute();
          if($select_forums->rowCount() > 0){
             while($fetch_forum = $select_forums->fetch(PDO::FETCH_ASSOC)){
+               // use the post id directly, do not treat it as an array
                $post_id = $fetch_forum['id'];
 
                $select_student = $conn->prepare("SELECT * FROM `users` WHERE id = ?");
@@ -59,7 +56,7 @@ $total_posts = $select_posts->rowCount();
                <p class= "message"><span><?= $fetch_forum['content']; ?></span></p>
             </div>  
          </div>
-         <a href="thread.php?get_id=<?= $post_id['id']; ?>" class="inline-btn">View Thread</a>
+         <a href="thread.php?get_id=<?= $post_id; ?>" class="inline-btn">View Thread</a>
       </div>
             <?php
          }
@@ -67,11 +64,8 @@ $total_posts = $select_posts->rowCount();
          echo '<p class="empty">no forums added yet!</p>';
       }
       ?>
+</div>
 
-      <!-- add new forum boxes -->
-
-   </div>
-<!-- Condition where if no Forums are found from DB, show no forums found -->
    <div class="more-btn">
       <a href="add_forum.php" class="inline-option-btn">Create a Forum Post</a>
    </div>
