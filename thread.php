@@ -48,6 +48,7 @@ if(isset($_POST['add_comment'])){
    }else{
       $message[] = 'please login first!';
    }
+}
 
 if(isset($_POST['delete_comment'])){
 
@@ -85,7 +86,6 @@ if(isset($_POST['update_now'])){
    }
 
   }
-}
 
 ?>
 
