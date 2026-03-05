@@ -70,3 +70,15 @@ toggleBtn.onclick = (e) =>{
       disableDarkMode();
    }
 }
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const btn = document.getElementById('createForum');
+//     if (btn) {
+//         btn.addEventListener('click', function(event) {
+//             event.preventDefault(); // Stop immediate form submission
+//             setTimeout(() => {
+//                 window.location.href = 'forum.php';
+//             }, 1000);
+//         });
+//     }
+// });

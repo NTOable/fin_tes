@@ -52,8 +52,8 @@ if($logged_in){
       <?php } else { ?>
          <h3>Please login or register first</h3>
          <div class="flex-btn">
-            <a href="login.php" class="option-btn">Login</a>
-            <a href="choose_role.php" class="option-btn">Register</a>
+            <a href="../login.php" class="option-btn">Login</a>
+            <a href="../choose_role.php" class="option-btn">Register</a>
          </div>
       <?php } ?>
    </div>
@@ -82,29 +82,31 @@ if($logged_in){
          <h3><?= $fetch_profile['name']; ?></h3>
          <span><?= $fetch_profile['profession']; ?></span>
          <a href="profile.php" class="btn">View Profile</a>
-         <?php
-            }else{
-         ?>
-         <h3>Please login or register first</h3>
-          <div class="flex-btn">
-            <a href="login.php" class="option-btn">Login</a>
-            <a href="register.php" class="option-btn">Register</a>
-         </div>
-         <?php
-            }
-         ?>
-      </div>
+         <?php } else { ?>
+                  <h3>Please login or register</h3>
+                  <div class="flex-btn">
+                     <a href="../login.php" class="option-btn">Login</a>
+                     <a href="../choose_role.php" class="option-btn">Register</a>
+                  </div>
+               <?php } ?>
+            </div>
 
    <nav class="navbar">
-      <a href="dashboard.php"><i class="fas fa-home"></i><span>Home</span></a>
-      <a href="playlists.php"><i class="fa-solid fa-bars-staggered"></i><span>Courses</span></a>
-      <a href="contents.php"><i class="fas fa-graduation-cap"></i><span>Lessons</span></a>
-      <a href="comments.php"><i class="fas fa-comment"></i><span>Comments</span></a>
-      <a href="contact.php"><i class="fas fa-phone"></i><span>Contact Us</span></a>
-      <a href="../components/tutor_logout.php" onclick="return confirm('logout from this website?');"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a>
+      <?php if($logged_in){ ?>
+         <a href="dashboard.php"><i class="fas fa-home"></i><span>Home</span></a>
+         <a href="playlists.php"><i class="fa-solid fa-bars-staggered"></i><span>Courses</span></a>
+         <a href="contents.php"><i class="fas fa-graduation-cap"></i><span>Lessons</span></a>
+         <a href="comments.php"><i class="fas fa-comment"></i><span>Comments</span></a>
+         <a href="about.php"><i class="fas fa-question"></i><span>About Us</span></a>
+         <a href="contact.php"><i class="fas fa-headset"></i><span>Contact Us</span></a>
+         <a href="../components/tutor_logout.php" onclick="return confirm('Logout?');"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a>
+      <?php } else { ?>
+         <a href="about.php"><i class="fas fa-question"></i><span>About Us</span></a>
+         <a href="contact.php"><i class="fas fa-headset"></i><span>Contact Us</span></a>
+      <?php } ?>
    </nav>
 
-</div>
+</div> <!-- CLOSE side-bar -->
 
 <!-- side bar section ends -->
  <div class="main-content">

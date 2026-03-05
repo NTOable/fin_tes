@@ -62,7 +62,7 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="../css/tutor_style.css">
+   <link rel="stylesheet" href="../css/admin_style.css">
 
 </head>
 <body>
@@ -107,7 +107,8 @@ if(isset($_POST['submit'])){
       <input type="file" name="thumb" accept="image/*" required class="box">
       <p>select video <span>*</span></p>
       <input type="file" name="video" accept="video/*" required class="box">
-      <input type="submit" value="upload video" name="submit" class="btn">
+      <input type="submit" value="upload lesson" name="submit" class="btn">
+      <input type="submit" value="back" name="back" class="delete-btn" onclick="window.location.href='dashboard.php';">
    </form>
 
 </section>

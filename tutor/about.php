@@ -1,11 +1,11 @@
 <?php
 
-include 'components/connect.php';
+include '../components/connect.php';
 
-if(isset($_COOKIE['user_id'])){
-   $user_id = $_COOKIE['user_id'];
+if(isset($_COOKIE['tutor_id'])){
+   $tutor_id = $_COOKIE['tutor_id'];
 }else{
-   $user_id = '';
+   $tutor_id = '';
 }
 
 ?>
@@ -22,12 +22,12 @@ if(isset($_COOKIE['user_id'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="../css/admin_style.css">
 
 </head>
 <body>
 
-<?php include 'components/user_header.php'; ?>
+<?php include '../components/tutor_header.php'; ?>
 
 <!-- about section starts  -->
 
@@ -36,7 +36,7 @@ if(isset($_COOKIE['user_id'])){
    <div class="row">
 
       <div class="image">
-         <img src="images/company-logo.png" alt="">
+         <img src="../images/company-logo.png" alt="">
       </div>
 
       <div class="content">
@@ -44,7 +44,6 @@ if(isset($_COOKIE['user_id'])){
          <p>As our saying goes, we wish to help connect students and tutors to flourish and collaborate with one another, 
             bridging the gap in education by delivering quality education.
          </p>
-         <a href="courses.php" class="inline-btn">Our Courses</a>
       </div>
 
    </div>
@@ -197,10 +196,10 @@ if(isset($_COOKIE['user_id'])){
 
 <!-- reviews section ends -->
 
-<?php include 'components/footer.php'; ?>
+<?php include '../components/footer.php'; ?>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="../js/tutor_script.js"></script>
    
 </body>
 </html>

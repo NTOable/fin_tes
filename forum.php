@@ -47,6 +47,14 @@ if(isset($_COOKIE['user_id'])){
                $select_student->execute([$fetch_forum['user_id']]);
                $fetch_student = $select_student->fetch(PDO::FETCH_ASSOC);
       ?>
+      <?php
+                  $count_replies = $conn->prepare("SELECT * FROM `forum_replies` WHERE post_id = ?");
+                  $count_replies->execute([$post_id]);
+                  
+
+
+                  $total_replies = $count_replies->rowCount();
+      ?>
 
       <div class="box">
          <div class="tutor">
@@ -56,6 +64,7 @@ if(isset($_COOKIE['user_id'])){
                <p class= "message"><span><?= $fetch_forum['content']; ?></span></p>
             </div>  
          </div>
+         <h3 class="title">Replies: <?= $total_replies; ?></h3>
          <a href="thread.php?get_id=<?= $post_id; ?>" class="inline-btn">View Thread</a>
       </div>
             <?php
@@ -67,7 +76,7 @@ if(isset($_COOKIE['user_id'])){
 </div>
 
    <div class="more-btn">
-      <a href="add_forum.php" class="inline-option-btn">Create a Forum Post</a>
+      <a href="add_forum.php" class="inline-option-btn">Create Post</a>
    </div>
 
 </section>

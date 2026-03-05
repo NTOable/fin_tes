@@ -2,6 +2,12 @@
 
 include '../components/connect.php';
 
+if(isset($_COOKIE['tutor_id'])){
+   $tutor_id = $_COOKIE['tutor_id'];
+}else{
+   $tutor_id = '';
+}
+
 if(isset($_POST['submit'])){
 
    $id = unique_id();
@@ -31,7 +37,7 @@ if(isset($_POST['submit'])){
       $message[] = 'email already taken!';
    }else{
       if($pass != $cpass){
-         $message[] = 'confirm passowrd not matched!';
+         $message[] = 'confirm password not matched!';
       }else{
          $insert_tutor = $conn->prepare("INSERT INTO `tutors`(id, name, profession, email, password, image) VALUES(?,?,?,?,?,?)");
          $insert_tutor->execute([$id, $name, $profession, $email, $cpass, $rename]);
@@ -50,18 +56,17 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>register</title>
+   <title>Registration Page</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="../css/tutor_style.css">
+   <link rel="stylesheet" href="../css/admin_style.css">
 
 </head>
-<body style="padding-left: 0;">
 
-<?php
+<!-- <?php
 if(isset($message)){
    foreach($message as $message){
       echo '
@@ -72,7 +77,9 @@ if(isset($message)){
       ';
    }
 }
-?>
+?> -->
+
+<?php include '../components/tutor_header.php'; ?>
 
 <!-- register section starts  -->
 
@@ -117,41 +124,10 @@ if(isset($message)){
 
 </section>
 
-<!-- registe section ends -->
+<?php include '../components/footer.php'; ?>
 
-
-
-
-
-
-
-
-
-
-
-
-<script>
-
-let darkMode = localStorage.getItem('dark-mode');
-let body = document.body;
-
-const enabelDarkMode = () =>{
-   body.classList.add('dark');
-   localStorage.setItem('dark-mode', 'enabled');
-}
-
-const disableDarkMode = () =>{
-   body.classList.remove('dark');
-   localStorage.setItem('dark-mode', 'disabled');
-}
-
-if(darkMode === 'enabled'){
-   enabelDarkMode();
-}else{
-   disableDarkMode();
-}
-
-</script>
+<!-- custom js file link  -->
+<script src="../js/tutor_script.js"></script>
    
 </body>
 </html>

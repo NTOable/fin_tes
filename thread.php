@@ -87,6 +87,29 @@ if(isset($_POST['update_now'])){
 
   }
 
+  if(isset($_POST['delete_post'])){
+
+   $delete_id = $_POST['post_id'];
+   $delete_id = filter_var($delete_id, FILTER_SANITIZE_STRING);
+
+   $verify_post = $conn->prepare("SELECT * FROM `forum_posts` WHERE id = ?");
+   $verify_post->execute([$delete_id]);
+
+   if($verify_post->rowCount() > 0){
+      $fetch_post = $verify_post->fetch(PDO::FETCH_ASSOC);
+      if($fetch_post['user_id'] == $user_id){
+         $delete_stmt = $conn->prepare("DELETE FROM `forum_posts` WHERE id = ?");
+         $delete_stmt->execute([$delete_id]);
+         $message[] = 'post deleted successfully!';
+         header('location:forum.php');
+      }else{
+         $message[] = 'you can only delete your own posts!';
+      }
+   }else{
+      $message[] = 'post already deleted!';
+   }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -173,14 +196,16 @@ if(isset($_POST['update_now'])){
             <p><?= $fetch_playlist['content']; ?></p>
             <div class="date"><i class="fas fa-calendar"></i><span><?= $fetch_playlist['date']; ?></span></div>
          </div>
-      </div>
-
-      <?php
+         <?php if($fetch_playlist['user_id'] == $user_id){ ?>
+         <form action="" method="post" class="flex-btn">
+            <input type="hidden" name="post_id" value="<?= $fetch_playlist['id']; ?>">
+            <button type="submit" name="delete_post" class="inline-delete-btn" onclick="return confirm('delete this post?');">delete</button>
+         </form>
+         <?php } ?>
+      </div> <?php
          }else{
             echo '<p class="empty">Error: Post is not loading</p>';
-         }  
-      ?>
-
+         }  ?>
    </div>
 
 </section>

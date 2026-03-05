@@ -92,6 +92,7 @@ if($logged_in){
          <a href="tutor.php"><i class="fas fa-chalkboard-user"></i><span>Tutors</span></a>
          <a href="about.php"><i class="fas fa-question"></i><span>About Us</span></a>
          <a href="contact.php"><i class="fas fa-headset"></i><span>Contact Us</span></a>
+         <a href="components/user_logout.php" onclick="return confirm('Logout?');"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a>
       <?php } else { ?>
          <a href="about.php"><i class="fas fa-question"></i><span>About Us</span></a>
          <a href="contact.php"><i class="fas fa-headset"></i><span>Contact Us</span></a>

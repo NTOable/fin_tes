@@ -120,7 +120,7 @@ if(isset($_POST['delete_video'])){
 
 <section class="contents">
 
-   <h1 class="heading">playlist videos</h1>
+   <h1 class="heading">Course Lessons</h1>
 
    <div class="box-container">
 
@@ -128,16 +128,16 @@ if(isset($_POST['delete_video'])){
       $select_videos = $conn->prepare("SELECT * FROM `content` WHERE tutor_id = ? AND playlist_id = ?");
       $select_videos->execute([$tutor_id, $playlist_id]);
       if($select_videos->rowCount() > 0){
-         while($fecth_videos = $select_videos->fetch(PDO::FETCH_ASSOC)){ 
-            $video_id = $fecth_videos['id'];
+         while($fetch_videos = $select_videos->fetch(PDO::FETCH_ASSOC)){ 
+            $video_id = $fetch_videos['id'];
    ?>
       <div class="box">
          <div class="flex">
-            <div><i class="fas fa-dot-circle" style="<?php if($fecth_videos['status'] == 'active'){echo 'color:limegreen'; }else{echo 'color:red';} ?>"></i><span style="<?php if($fecth_videos['status'] == 'active'){echo 'color:limegreen'; }else{echo 'color:red';} ?>"><?= $fecth_videos['status']; ?></span></div>
-            <div><i class="fas fa-calendar"></i><span><?= $fecth_videos['date']; ?></span></div>
+            <div><i class="fas fa-dot-circle" style="<?php if($fetch_videos['status'] == 'active'){echo 'color:limegreen'; }else{echo 'color:red';} ?>"></i><span style="<?php if($fetch_videos['status'] == 'active'){echo 'color:limegreen'; }else{echo 'color:red';} ?>"><?= $fetch_videos['status']; ?></span></div>
+            <div><i class="fas fa-calendar"></i><span><?= $fetch_videos['date']; ?></span></div>
          </div>
-         <img src="../uploaded_files/<?= $fecth_videos['thumb']; ?>" class="thumb" alt="">
-         <h3 class="title"><?= $fecth_videos['title']; ?></h3>
+         <img src="../uploaded_files/<?= $fetch_videos['thumb']; ?>" class="thumb" alt="">
+         <h3 class="title"><?= $fetch_videos['title']; ?></h3>
          <form action="" method="post" class="flex-btn">
             <input type="hidden" name="video_id" value="<?= $video_id; ?>">
             <a href="update_content.php?get_id=<?= $video_id; ?>" class="option-btn">update</a>
@@ -148,7 +148,9 @@ if(isset($_POST['delete_video'])){
    <?php
          }
       }else{
-         echo '<p class="empty">no videos added yet! <a href="add_content.php" class="btn" style="margin-top: 1.5rem;">add videos</a></p>';
+         echo '<p class="empty">no videos added yet! <a href="add_content.php" class="btn" 
+         style="margin-top: 1.5rem;">add videos</a> <a href="playlists.php" class="delete-btn">Back</a></p>
+         ';
       }
    ?>
 
