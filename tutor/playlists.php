@@ -42,7 +42,7 @@ if(isset($_POST['delete'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Playlists</title>
+   <title>My Courses</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -57,13 +57,13 @@ if(isset($_POST['delete'])){
 
 <section class="playlists">
 
-   <h1 class="heading">added playlists</h1>
+   <h1 class="heading">Published Courses</h1>
 
    <div class="box-container">
    
       <div class="box" style="text-align: center;">
-         <h3 class="title" style="margin-bottom: .5rem;">create new playlist</h3>
-         <a href="add_playlist.php" class="btn">add playlist</a>
+         <h3 class="title" style="margin-bottom: .5rem;">Add a Course</h3>
+         <a href="add_playlist.php" class="btn">create</a>
       </div>
 
       <?php

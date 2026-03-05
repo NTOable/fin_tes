@@ -96,10 +96,11 @@ if($logged_in){
       </div>
 
    <nav class="navbar">
-      <a href="dashboard.php"><i class="fas fa-home"></i><span>home</span></a>
-      <a href="playlists.php"><i class="fa-solid fa-bars-staggered"></i><span>playlists</span></a>
-      <a href="contents.php"><i class="fas fa-graduation-cap"></i><span>contents</span></a>
-      <a href="comments.php"><i class="fas fa-comment"></i><span>comments</span></a>
+      <a href="dashboard.php"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="playlists.php"><i class="fa-solid fa-bars-staggered"></i><span>Courses</span></a>
+      <a href="contents.php"><i class="fas fa-graduation-cap"></i><span>Lessons</span></a>
+      <a href="comments.php"><i class="fas fa-comment"></i><span>Comments</span></a>
+      <a href="contact.php"><i class="fas fa-phone"></i><span>Contact Us</span></a>
       <a href="../components/tutor_logout.php" onclick="return confirm('logout from this website?');"><i class="fas fa-right-from-bracket"></i><span>Logout</span></a>
    </nav>
 

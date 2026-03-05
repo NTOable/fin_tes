@@ -53,12 +53,6 @@ $total_comments = $select_comments->rowCount();
    <div class="box-container">
 
       <div class="box">
-         <h3>welcome!</h3>
-         <p><?= $fetch_profile['name']; ?></p>
-         <a href="profile.php" class="btn">view profile</a>
-      </div>
-
-      <div class="box">
          <h3><?= $total_contents; ?></h3>
          <p>total contents</p>
          <a href="add_content.php" class="btn">add new content</a>
@@ -86,19 +80,7 @@ $total_comments = $select_comments->rowCount();
 
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- courses section starts  -->
 
 <?php include '../components/footer.php'; ?>
 

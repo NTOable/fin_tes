@@ -60,10 +60,10 @@ $total_bookmarked = $select_bookmark->rowCount();
 
 <section class="quick-select">
 
-   <h1 class="heading">Quick Options</h1>
+   <h1 class="heading">Dashboard</h1>
 
    <div class="box-container">
-
+   
       <?php
          if($user_id != ''){
       ?>
@@ -120,6 +120,12 @@ $total_bookmarked = $select_bookmark->rowCount();
          <h3 class="title">Become a Tutor Today</h3>
          <p>Interested in lighting another one's mind?</p>
          <a href="tutor/register.php" class="inline-btn">Get Started</a>
+      </div>
+
+            <div class="box tutor">
+         <h3 class="title">Check out Torchlight's Community!</h3>
+         <p>Come ignite with us!</p>
+         <a href="forum.php" class="inline-btn">Go</a>
       </div>
 
    </div>
