@@ -79,20 +79,6 @@ if(isset($_POST['submit'])){
 
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php include '../components/footer.php'; ?>
 
 <script src="../js/tutor_script.js"></script>

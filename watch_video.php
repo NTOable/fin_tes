@@ -239,7 +239,7 @@ if(isset($_POST['update_now'])){
 <!-- comments section starts  -->
 
 <section class="comments">
-
+   <!-- code to add a comment -->
    <h1 class="heading">add a comment</h1>
 
    <form action="" method="post" class="add-comment">

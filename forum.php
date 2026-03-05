@@ -54,19 +54,12 @@ $total_posts = $select_posts->rowCount();
       <div class="box">
          <div class="tutor">
             <div class="info">
-                 <h3 class ="title"><?= $fetch_student['name']; ?></h3>
-               <span><?= $fetch_forum['date']; ?></span>
-               <p class= "message"><?= $fetch_forum['title']; ?></p>
+                 <h3 class ="title">Post Title: <?= $fetch_forum['title']; ?></h3>
+               <span><?= $fetch_student['name']; ?> posted on: <?= $fetch_forum['date']; ?></span>
+               <p class= "message"><span><?= $fetch_forum['content']; ?></span></p>
             </div>  
          </div>
-         <div class="thumb">
-            <img src="images/thumb-1.png" alt="">
-            <!-- span should be replaced with -->
-            <!-- <span> global variable for fetch all 
-               comments linked to a single post </span>  -->
-            <span>10 comments</span> 
-         </div>
-         <a href="replies.php" class="inline-btn">View Thread</a>
+         <a href="thread.php?get_id=<?= $post_id['id']; ?>" class="inline-btn">View Thread</a>
       </div>
             <?php
          }
@@ -82,9 +75,6 @@ $total_posts = $select_posts->rowCount();
    <div class="more-btn">
       <a href="add_forum.php" class="inline-option-btn">Create a Forum Post</a>
    </div>
-<!-- NEED TO MODIFY CSS -->
-<!-- TO ONLY SHOW THREE THREADS AT A TIME -->
-
 
 </section>
 

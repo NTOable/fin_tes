@@ -97,7 +97,7 @@ if(isset($_POST['update_now'])){
 
 <section class="comments">
 
-   <h1 class="heading">your comments</h1>
+   <h1 class="heading">Your Comments</h1>
 
    
    <div class="show-comments">
