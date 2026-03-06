@@ -76,6 +76,28 @@ if(isset($_POST['submit'])){
       <input type="file" name="image" accept="image/*" required class="box">
       <input type="submit" value="create playlist" name="submit" class="btn">
       <input type="submit" value="back" name="back" class="delete-btn" onclick="window.location.href='dashboard.php';">
+      <input type="hidden" name="playlist_id" value="<?= $playlist_id; ?>">
+
+      <h3>Select Class Day</h3>
+      <select name="class_day" required>
+         <option value="Monday">Monday</option>
+         <option value="Tuesday">Tuesday</option>
+         <option value="Wednesday">Wednesday</option>
+         <option value="Thursday">Thursday</option>
+         <option value="Friday">Friday</option>
+         <option value="Saturday">Saturday</option>
+         <option value="Sunday">Sunday</option>
+      </select>
+
+      <h3>Start Time</h3>
+      <input type="time" name="start_time" required>
+
+      <h3>End Time</h3>
+      <input type="time" name="end_time" required>
+
+      <br><br>
+
+      <button type="submit" name="submit" class="option-btn">Save Schedule</button>
    </form>
 
 </section>
@@ -83,6 +105,8 @@ if(isset($_POST['submit'])){
 <?php include '../components/footer.php'; ?>
 
 <script src="../js/tutor_script.js"></script>
+
+
 
 </body>
 </html>
