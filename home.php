@@ -187,7 +187,7 @@ $total_bookmarked = $select_bookmark->rowCount();
       <img src="<?= getImage($fetch_course['thumb']); ?>" class="thumb">
 
          <h3 class="title"><?= $fetch_course['title']; ?></h3>
-         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view playlist</a>
+         <a href="playlist.php?get_id=<?= $course_id; ?>" class="inline-btn">view course</a>
       </div>
       <?php
          }

@@ -140,18 +140,6 @@ if(isset($_POST['submit'])){
 
 <!-- update profile section ends -->
 
-
-
-
-
-
-
-
-
-
-
-
-
 <?php include 'components/footer.php'; ?>
 
 <!-- custom js file link  -->
