@@ -38,7 +38,7 @@ if(isset($_POST['submit'])){
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/admin_style.css">
 
 </head>
 <body>
@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
    
 <section class="playlist-form">
 
-   <h1 class="heading">Create a Forum Post</h1>
+   <h1 class="heading">Create Forum Post</h1>
 
    <form action="" method="post" enctype="multipart/form-data">
       <p>Forum Title <span>*</span></p>

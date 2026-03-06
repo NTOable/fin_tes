@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Dashboard</title>
+   <title>Upload Lesson</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -71,20 +71,20 @@ if(isset($_POST['submit'])){
    
 <section class="video-form">
 
-   <h1 class="heading">upload content</h1>
+   <h1 class="heading">upload lesson</h1>
 
    <form action="" method="post" enctype="multipart/form-data">
-      <p>video status <span>*</span></p>
+      <p>lesson status <span>*</span></p>
       <select name="status" class="box" required>
          <option value="" selected disabled>-- select status</option>
          <option value="active">active</option>
          <option value="deactive">deactive</option>
       </select>
-      <p>video title <span>*</span></p>
-      <input type="text" name="title" maxlength="100" required placeholder="enter video title" class="box">
-      <p>video description <span>*</span></p>
+      <p>lesson title <span>*</span></p>
+      <input type="text" name="title" maxlength="100" required placeholder="enter lesson title" class="box">
+      <p>lesson description <span>*</span></p>
       <textarea name="description" class="box" required placeholder="write description" maxlength="1000" cols="30" rows="10"></textarea>
-      <p>video playlist <span>*</span></p>
+      <p>lesson course <span>*</span></p>
       <select name="playlist" class="box" required>
          <option value="" disabled selected>--select playlist</option>
          <?php
@@ -99,7 +99,7 @@ if(isset($_POST['submit'])){
          ?>
          <?php
          }else{
-            echo '<option value="" disabled>no playlist created yet!</option>';
+            echo '<option value="" disabled>no courses created yet!</option>';
          }
          ?>
       </select>
@@ -108,24 +108,10 @@ if(isset($_POST['submit'])){
       <p>select video <span>*</span></p>
       <input type="file" name="video" accept="video/*" required class="box">
       <input type="submit" value="upload lesson" name="submit" class="btn">
-      <input type="submit" value="back" name="back" class="delete-btn" onclick="window.location.href='dashboard.php';">
+      <input type="submit" value="back" name="back" class="delete-btn" onclick="window.location.href='contents.php';">
    </form>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php include '../components/footer.php'; ?>
 
