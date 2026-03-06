@@ -49,7 +49,7 @@ if(isset($_POST['save_list'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>playlist</title>
+   <title>course</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -66,7 +66,7 @@ if(isset($_POST['save_list'])){
 
 <section class="playlist">
 
-   <h1 class="heading">playlist details</h1>
+   <h1 class="heading">course details</h1>
 
    <div class="row">
 
@@ -101,13 +101,13 @@ if(isset($_POST['save_list'])){
             <?php
                }else{
             ?>
-               <button type="submit" name="save_list"><i class="far fa-bookmark"></i><span>save playlist</span></button>
+               <button type="submit" name="save_list"><i class="far fa-bookmark"></i><span>save course</span></button>
             <?php
                }
             ?>
          </form>
          <div class="thumb">
-            <span><?= $total_videos; ?> videos</span>
+            <span><?= $total_videos; ?> lessons</span>
             <img src="uploaded_files/<?= $fetch_playlist['thumb']; ?>" alt="">
          </div>
       </div>
@@ -143,7 +143,7 @@ if(isset($_POST['save_list'])){
 
 <section class="videos-container">
 
-   <h1 class="heading">playlist videos</h1>
+   <h1 class="heading">course lessons</h1>
 
    <div class="box-container">
 
@@ -161,7 +161,7 @@ if(isset($_POST['save_list'])){
       <?php
             }
          }else{
-            echo '<p class="empty">no videos added yet!</p>';
+            echo '<p class="empty">no lessons added yet!</p>';
          }
       ?>
 

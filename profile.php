@@ -62,10 +62,10 @@ $total_bookmarked = $select_bookmark->rowCount();
                <i class="fas fa-bookmark"></i>
                <div>
                   <h3><?= $total_bookmarked; ?></h3>
-                  <span>saved playlists</span>
+                  <span>saved courses</span>
                </div>
             </div>
-            <a href="bookmark.php" class="inline-btn">view playlists</a>
+            <a href="bookmark.php" class="inline-btn">view courses</a>
          </div>
 
          <div class="box">
@@ -73,7 +73,7 @@ $total_bookmarked = $select_bookmark->rowCount();
                <i class="fas fa-heart"></i>
                <div>
                   <h3><?= $total_likes; ?></h3>
-                  <span>liked tutorials</span>
+                  <span>liked lessons</span>
                </div>
             </div>
             <a href="likes.php" class="inline-btn">view liked</a>
