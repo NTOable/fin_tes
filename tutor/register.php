@@ -95,7 +95,7 @@ if(isset($message)){
             <select name="profession" class="box" required>
                <option value="" disabled selected>-- select your profession</option>
                <option value="developer">developer</option>
-               <option value="desginer">desginer</option>
+               <option value="designer">designer</option>
                <option value="musician">musician</option>
                <option value="biologist">biologist</option>
                <option value="teacher">teacher</option>

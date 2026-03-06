@@ -1,9 +1,10 @@
 <?php
 if(isset($message)){
-   foreach($message as $message){
+   $messages = is_array($message) ? $message : [$message];
+   foreach($messages as $msg){
       echo '
       <div class="message">
-         <span>'.$message.'</span>
+         <span>'.$msg.'</span>
          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>
       ';

@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Add Playlist</title>
+   <title>Publish Course</title>
 
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -59,45 +59,23 @@ if(isset($_POST['submit'])){
    
 <section class="playlist-form">
 
-   <h1 class="heading">create playlist</h1>
+   <h1 class="heading">create course</h1>
 
    <form action="" method="post" enctype="multipart/form-data">
-      <p>playlist status <span>*</span></p>
+      <p>course status <span>*</span></p>
       <select name="status" class="box" required>
          <option value="" selected disabled>-- select status</option>
          <option value="active">active</option>
          <option value="deactive">deactive</option>
       </select>
-      <p>playlist title <span>*</span></p>
+      <p>course title <span>*</span></p>
       <input type="text" name="title" maxlength="100" required placeholder="enter playlist title" class="box">
-      <p>playlist description <span>*</span></p>
+      <p>course description <span>*</span></p>
       <textarea name="description" class="box" required placeholder="write description" maxlength="1000" cols="30" rows="10"></textarea>
-      <p>playlist thumbnail <span>*</span></p>
+      <p>course thumbnail <span>*</span></p>
       <input type="file" name="image" accept="image/*" required class="box">
       <input type="submit" value="create playlist" name="submit" class="btn">
       <input type="submit" value="back" name="back" class="delete-btn" onclick="window.location.href='dashboard.php';">
-      <input type="hidden" name="playlist_id" value="<?= $playlist_id; ?>">
-
-   <h3>Select Class Day</h3>
-   <select name="class_day" required>
-      <option value="Monday">Monday</option>
-      <option value="Tuesday">Tuesday</option>
-      <option value="Wednesday">Wednesday</option>
-      <option value="Thursday">Thursday</option>
-      <option value="Friday">Friday</option>
-      <option value="Saturday">Saturday</option>
-      <option value="Sunday">Sunday</option>
-   </select>
-
-   <h3>Start Time</h3>
-   <input type="time" name="start_time" required>
-
-   <h3>End Time</h3>
-   <input type="time" name="end_time" required>
-
-   <br><br>
-
-   <button type="submit" name="submit" class="option-btn">Save Schedule</button>
    </form>
 
 </section>
